@@ -37,7 +37,10 @@ mysql -h 127.0.0.1 -u root -padmin < demo.sql
 
 
 
-Clientes para conectarse al MySQL
+## Clientes gratuitos para conectarse al MySQL
 
-
-
+- [mysql-Cliente](https://dev.mysql.com/downloads/mysql): Cliente nativo en la terminal.
+- [MySQL Workbench](https://dev.mysql.com/downloads/workbench): Cliente gráfico oficial de MySQL.
+- [Sequel Pro](https://sequelpro.com)
+- [DBeaver](https://dbeaver.io/download)
+- [HeidiSQL](https://www.heidisql.com)
