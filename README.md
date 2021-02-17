@@ -31,11 +31,17 @@ docker exec -it mysql /bin/bash
 mysql -h 127.0.0.1 -u root -padmin
 ```
 
+## Hacer un respaldo:
+
+```
 mysqldump -h 127.0.0.1 -u root -padmin demo > demo.sql
+```
 
+## Restaurar un respaldo:
+
+```
 mysql -h 127.0.0.1 -u root -padmin < demo.sql
-
-
+```
 
 ## Clientes gratuitos para conectarse al MySQL
 
