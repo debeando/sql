@@ -7,6 +7,12 @@ Curso de SQL basico en MySQL
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=admin -p 3306:3306 -d mysql:8
 ```
 
+Otra forma de iniciarlo es compartiendo el directorio donde estamos con el contenedor:
+
+```bash
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=admin -p 3306:3306 --volume $(pwd)/:/root -d mysql:8
+```
+
 NOTA: Puede que reinicies el equipo y el contenedor se detenga, puedes iniciarlo de la siguiente manera:
 
 ```bash
@@ -50,3 +56,10 @@ mysql -h 127.0.0.1 -u root -padmin < demo.sql
 - [Sequel Pro](https://sequelpro.com)
 - [DBeaver](https://dbeaver.io/download)
 - [HeidiSQL](https://www.heidisql.com)
+
+## Material
+
+- https://www.mysqltutorial.org
+- https://use-the-index-luke.com
+- https://dev.mysql.com/doc/refman/8.0/en
+- https://debeando.com
