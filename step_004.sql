@@ -14,12 +14,13 @@ CREATE TABLE IF NOT EXISTS address (
   PRIMARY KEY (id)
 );
 
-insert into address (user_id, country, city, address) values ('faa72ef9-6576-11eb-9caa-0242ac110002', 'Italia', 'Veneto', 'Via batisti 22');
-insert into address (user_id, country, city, address, address_type) values ('faa72ef9-6576-11eb-9caa-0242ac110002', 'Spain', 'Barcelona', 'Carrer ....', 'Billing');
-insert into address (user_id, country, city, address) values ('abc', 'Spain', 'Barcelona', 'Carrer ....');
+INSERT INTO address (user_id, country, city, address) values ('faa72ef9-6576-11eb-9caa-0242ac110002', 'Italia', 'Veneto', 'Via batisti 22');
+INSERT INTO address (user_id, country, city, address, address_type) values ('faa72ef9-6576-11eb-9caa-0242ac110002', 'Spain', 'Barcelona', 'Carrer ....', 'Billing');
+INSERT INTO address (user_id, country, city, address) values ('abc', 'Spain', 'Barcelona', 'Carrer ....');
 
 
-select u.id, u.user_id, email, a.city
-from users AS u
-join address AS a on u.user_id = a.user_id
-where u.user_id = 'abc';
+SELECT u.id, u.user_id, email, a.city
+FROM users AS u
+JOIN address AS a
+  ON u.user_id = a.user_id
+WHERE u.user_id = 'abc';
