@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS address;
 
 CREATE TABLE IF NOT EXISTS address (
-  id BIGINT NOT NULL AUTO_INCREMENT,
-  user_id CHAR(36) NOT NULL,
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  user_id BIGINT UNSIGNED NOT NULL,
   address_status ENUM('Inactive','Active') DEFAULT 'Inactive' NOT NULL,
   address_type ENUM('Billing','Shipping') DEFAULT 'Shipping' NOT NULL,
   country VARCHAR(64) NOT NULL,
@@ -14,10 +14,16 @@ CREATE TABLE IF NOT EXISTS address (
   PRIMARY KEY (id)
 );
 
-INSERT INTO address (user_id, country, city, address) values ('faa72ef9-6576-11eb-9caa-0242ac110002', 'Italia', 'Veneto', 'Via batisti 22');
-INSERT INTO address (user_id, country, city, address, address_type) values ('faa72ef9-6576-11eb-9caa-0242ac110002', 'Spain', 'Barcelona', 'Carrer ....', 'Billing');
-INSERT INTO address (user_id, country, city, address) values ('abc', 'Spain', 'Barcelona', 'Carrer ....');
+ALTER TABLE address
+ADD CONSTRAINT address_users
+FOREIGN KEY (user_id)
+REFERENCES  users(id)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
 
+INSERT INTO address (user_id, country, city, address) values (1, 'Italia', 'Veneto', 'Via batisti 22');
+INSERT INTO address (user_id, country, city, address, address_type) values (1, 'Spain', 'Barcelona', 'Carrer ....', 'Billing');
+INSERT INTO address (user_id, country, city, address) values (2, 'Spain', 'Barcelona', 'Carrer ....');
 
 SELECT u.id, u.user_id, email, a.city
 FROM users AS u
